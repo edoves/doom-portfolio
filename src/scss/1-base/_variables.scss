@@ -1,0 +1,36 @@
+// custom property
+:root {
+    --color-primary: #ff5c5c;
+    --color-primary-light: #FF3366;
+    --color-primary-dark:#BA265D;
+
+    --color-grey-light-1: #ecf1f5;
+    --color-grey-light-2: #f4f2f2;
+    --color-grey-light-3: #f0eeee;
+    --color-grey-light-4: #ccc;
+
+    --color-grey-dark-1: #333;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;
+
+    --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
+    --shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
+
+    --line: 1px solid var(--color-grey-light-2);
+
+    --grid-width: 114rem;
+    --gutter-vertical: 8rem;
+
+    --heading-2-color: #2e3c40;
+
+    --body-font-family: 'Roboto', sans-serif;
+    --heading-font-family: 'Montserrat', sans-serif;
+
+
+}
+// // variable setup for media query
+// $bp-largest: 75em; // 1200px/16px = 75
+// $bp-large: 68.75em; // 1100px/ 56.25 = 68.75
+// $bp-medium: 56.25em;  //900px/16px = 56.25
+// $bp-small: 37.5em; // 600px/16px = 37.5
+// $bp-smallest: 31.25em; // 500px

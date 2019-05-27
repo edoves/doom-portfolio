@@ -1,0 +1,261 @@
+.row {
+    max-width: var(--grid-width);
+    margin: 0 auto;    
+
+    // &:not(:last-child) {
+    //     margin-bottom: var(--gutter-vertical);
+    // }
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(4, minmax(min-content, max-content)) min-content min-content min-content;
+    grid-template-columns: 
+    [full-start]
+        minmax(6rem, 1fr) 
+    [center-start]
+        repeat(8, [col-start] minmax(min-content, 14rem) [col-end] ) 
+    [center-end]
+        minmax(6rem, 1fr)
+    [full-end];
+
+    // @media only screen and (max-width: $bp-large) {
+    //     grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    //     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    // }
+
+    // @media only screen and (max-width: $bp-medium) {
+    //     grid-template-rows: 6rem calc(100vh - 6rem);
+    // }
+}
+.note {
+    background-color: #232f32;
+    color: #fff;
+    padding: 1.6rem;
+        &__container {
+            max-width: 60%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        &__hide {
+            margin: 0 1rem;
+            padding: 0.1rem 2rem;
+            background-color: #fff;
+            border: 0;
+            color: #333;
+            cursor: pointer;
+            transition: all .2s;
+
+                &:hover {
+                    background-color: var(--color-primary);
+                    color: #fff;
+                }
+        }
+
+        &__p {
+            display: inline-block;
+            
+            margin-bottom: 0;
+        }
+
+        a:link,
+        a:visited{
+            color: #fff;
+            transition: all .2s;
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
+
+     
+}
+.hero {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    &__arrow {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding-right: 6rem;
+
+            @include respond(tab-port) {
+                bottom: -10rem;
+                right: inherit;
+            }
+            
+        svg {
+            transform: rotate(90deg);
+            width: 44px;
+            height: 44px;
+            polygon {
+                fill: var(--color-primary);
+            }
+        }
+    }
+    
+}
+
+.services {
+    .servicecontent {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        // grid-template-columns: repeat(6, 1fr);
+        grid-row-gap: 5rem;
+        margin: 0 5rem;
+        @include respond(phone) {
+            margin: 0;
+        }
+        
+        @include respond(iPhoneX) {
+            margin: 0;
+        }
+
+        &__image {
+            width: 100%;
+            display:block;
+                @include respond(tab-port-two) {
+                    width: 70%;
+                    margin:0 auto;
+                }
+        }
+
+        &__top,
+        &__bottom {
+            display: flex;
+            align-items: center;
+
+            @include respond(tab-port-two) {
+                display: block;
+                overflow: hidden;
+            }
+        }
+
+        &__top-content {
+            position: relative;
+            top: 2rem;            
+            right: 13rem;
+            @include respond(tab-port-two) {
+                position: static;
+                text-align: center;
+            }
+           
+        }
+        
+        &__bottom-content {
+            position: relative;
+            left: 13rem;
+            text-align: right;
+            @include respond(tab-port-two) {
+                position: static;
+                text-align: center;
+            }
+        }
+
+        &__bottom {
+            .servicecontent__image {
+                order: 1;
+            }
+
+            .bottom-heading {
+                @include respond(tab-port-two) {
+                    text-align: center;
+                }
+            }
+        }
+
+        .servicecontent--content {
+            @include respond(tab-port-two) {
+               padding:2rem;
+            }
+        }
+
+      
+    }
+}
+
+
+.porfolio {
+    display: grid;
+    grid-template: repeat(2, 1fr)/repeat(3, 1fr);
+
+       @include respond(ipad) {
+            grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+        }
+
+        @include respond(iPhoneX) {
+            grid-template: repeat(2, 1fr)/repeat(1, 1fr);
+        }
+    
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        // object-fit: cover;
+        display: block;
+    }
+}
+
+.about {
+    padding: 10rem 0;
+    .aboutcontent {
+        display: grid;
+        grid-template-rows: repeat(2, min-content);
+        grid-row-gap: 5rem;
+        margin: 0 5rem;
+            @include respond(phone) {
+                margin: 0;
+            }       
+
+        &__top {
+            display: flex;
+            align-items: center;
+                @include respond(tab-port-two) {
+                    display: block;
+                    overflow: hidden;
+                }
+        }
+
+        &__image {
+            width: 100%;
+            display:block;
+            order:1;
+            @include respond(tab-port-two) {
+                width: 70%;
+                margin:0 auto;
+            }
+        }
+
+        &__top-content {
+            position: relative;
+            left: 13rem;
+            text-align: right;
+            @include respond(tab-port-two) {
+                position: static;
+                text-align: center;
+            }
+        }
+
+        &--content {
+            @include respond(tab-port-two) {
+               padding:2rem;
+            }
+        }
+
+        &__bottom {
+            display: block;
+            max-width: 65%;
+            margin: 0 auto;
+
+            @include respond(ipad) {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.contact {
+    padding: 5rem 0;
+
+}

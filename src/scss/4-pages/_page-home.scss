@@ -1,0 +1,43 @@
+%grid {
+    grid-column: full-start / full-end;
+}
+.container {
+    .header{
+        @extend %grid;
+    }
+    .hero {
+        background-color: var(--color-grey-light-1);
+        @extend %grid;
+        padding: 30rem 0;
+    }
+    
+    .services {
+        background-color: #fff;
+        @extend %grid;
+        padding: 10rem 0;
+        
+    }
+    
+    .porfolio {
+        background-color: #c2cfd7;
+        @extend %grid;
+    }
+    
+    .about {
+        background-color: #fff;
+        @extend %grid;
+    }
+    
+    .contact {
+        background-color: #2d3b3f;
+        @extend %grid;
+    }
+    
+    .footer {
+        background-color: #232f32;
+        text-align: center;
+        color: #fff;
+        @extend %grid;
+    }
+}
+
