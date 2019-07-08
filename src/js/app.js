@@ -16,3 +16,20 @@ headerNavBtnClose.addEventListener('click', function () {
 hide.addEventListener('click', function () {
     document.querySelector('#note').style.display = "none";
 });
+
+
+document.querySelector("#down").addEventListener("click", smoothScroll);
+
+function smoothScroll() {
+    window.scroll({
+        top: 830,
+        left: 0,
+        behavior: "smooth"
+    });
+}
+
+// window.addEventListener("scroll", () => {
+//   const scrolled = window.scrollY;
+
+//   console.log(scrolled);
+// });

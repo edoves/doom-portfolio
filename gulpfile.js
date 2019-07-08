@@ -15,7 +15,6 @@ const imagemin = require('gulp-imagemin');
 
 function copyHTML() {
     return gulp.src('./*.html')
-        .pipe(gulp.dest('./src'))
         .pipe(gulp.dest('./dist'));
 }
 
